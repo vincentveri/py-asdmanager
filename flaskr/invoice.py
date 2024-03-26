@@ -86,6 +86,7 @@ def update(id):
                 (title, body, id)
             )
             db.commit()
+            flash("Messaggio salvato", "success")
             return redirect(url_for('invoice.index'))
 
     return render_template('invoice/update.html', post=post)
