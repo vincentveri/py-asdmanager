@@ -10,5 +10,6 @@ instance/
 htmlcov/
 
 dist/
+!flaskr/static/dist/
 build/
 *.egg-info/
