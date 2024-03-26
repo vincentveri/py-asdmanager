@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-        <div class="container flex flex-wrap items-center justify-between mx-auto">
+        <div class="container flex flex-wrap items-center justify-between mx-auto max-w-screen-lg">
             <a href="#" class="flex items-center">
                 <img src="{{url_for('static',filename='dist/images/logo.svg')}}" class="h-6 mr-3 sm:h-16" alt="ASD Dragonfly Lecce">
                 <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">ASD Manager</span>
@@ -54,14 +54,19 @@
         </div>
     </nav>
 
-    <section class="content">
-    <header>
-        {% block header %}{% endblock %}
-    </header>
-    {% for message in get_flashed_messages() %}
-        <div class="flash">{{ message }}</div>
-    {% endfor %}
-    {% block content %}{% endblock %}
+    <section class="container mx-auto max-w-screen-lg" id="content">
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
+            <div class="rounded-lg lg:col-span-3">
+                <header class="container mx-auto">
+                    <h2 class="text-2xl font-bold">{% block header %}{% endblock %}</h2>
+                    {% for message in get_flashed_messages() %}
+                    <div class="flash">{{ message }}</div>
+                    {% endfor %}
+                </header>
+            
+                {% block content %}{% endblock %}
+            </div>
+          </div>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>

@@ -13,3 +13,4 @@ dist/
 !flaskr/static/dist/
 build/
 *.egg-info/
+node_modules/

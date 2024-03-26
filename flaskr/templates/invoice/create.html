@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}New Post{% endblock %}</h1>
+  {% block title %}New Post{% endblock %}
 {% endblock %}
 
 {% block content %}
-
 <form class="max-w-sm mx-auto" method="post">
   <div class="mb-5">
     <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
