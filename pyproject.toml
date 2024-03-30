@@ -4,6 +4,7 @@ version = "1.0.0"
 description = "The ASD Manager app built on top of Flask"
 dependencies = [
     "flask",
+    "alembic"
 ]
 
 [build-system]
