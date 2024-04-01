@@ -38,4 +38,7 @@ def create_app(test_config=None):
     app.register_blueprint(documento.bp)
     app.add_url_rule('/', endpoint='index')
 
+    from . import cliente
+    app.register_blueprint(cliente.bp)
+
     return app
